@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+      <!-- womans clothes section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="womans_taital">Ayollarga zor koylaklar bor</h1>
+            <div class="womans_section_2">
+               {% for woman in womanfor %}
+               <div class="row">
+                  <div class="col-md-6">
+                     <a href="{{woman.get_absolute_url}}">{{woman.name}}</a>
+                     <div class="read_bt"><a href="#">Buy Now</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="image_4"><img src="{{woman.image.url}}"></div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <!-- womans clothes section end -->
+{% endblock content %}

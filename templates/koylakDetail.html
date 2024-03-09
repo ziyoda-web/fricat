@@ -1,0 +1,7 @@
+<h1>Name: {{koy.name}}</h1>
+<h1>Bio: {{koy.bio}}</h1>
+<img width="150px" src="{{koy.img.url}}">
+<a href="{% url 'koylak_delete' koy.slug %}">o'chirish</a><br>
+<a href="{% url 'koylak_edit' koy.slug %}">Tahrirlash</a><br>
+<a href="{% url 'koylak_create' %}">yaratish</a><br>
+<a href="{% url 'index' %}">Asosiy sahifa</a>

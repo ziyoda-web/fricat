@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Yangiliklarni o'chirish qismiga Welcome</h2>
+<form method="post">{% csrf_token %}
+    <p>{{koy.name}} shu nomli mahsulotni o'chirmoqchimisiz</p>
+    <button type="submit">Tasdiqlash</button>
+</form>
+</body>
+</html>

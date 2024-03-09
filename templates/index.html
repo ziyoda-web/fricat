@@ -1,0 +1,154 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+         <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               {% for big in bigges %}
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="row border_1">
+                        <div class="col-md-4">
+                           <div class="image_1"><img src="{{big.img.url}}" style="width:100%"></div>
+                        </div>
+                        <div class="col-md-4">
+                           <h1 class="banner_taital">{{big.name}}</h1>
+                           <div class="buynow_bt active"><a href="#">Buy Now</a></div>
+                           <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="image_2"><img src="{{big.image.url}}" style="width:100%"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+            </a>
+         </div>
+      </div>
+      <!-- banner section end -->
+      <!-- catagary section start -->
+      <div class="catagary_section layout_padding">
+         <div class="container">
+            <div class="catagary_main">
+               <div class="catagary_left">
+                  <h2 class="categary_text">Hamma narsalar</h2>
+               </div>
+               <div class="catagary_right">
+                  <div class="catagary_menu">
+                     <ul>
+                        <li><a href="#">Erkaklar kiyimlari</a></li>
+                        <li><a href="#">Ayollar uchun</a></li>
+                        <li><a href="#">Chiroyli</a></li>
+                        <li><a href="#">Telefonlar</a></li>
+                        <li><a href="#">Kompyuterlar</a></li>
+                        <li><a href="#">Soatlar</a></li>
+                        <li><a href="#">Kiyimlar</a></li>
+                        <li><a href="#">Sport</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="catagary_section_2">
+         <div class="container-fluid">
+            <div class="row">
+               {% for wat in watch %}
+               <div class="col-md-4">
+                  <div class="box_man">
+                      <h1><a href="{{wat.get_absolute_url}}">{{wat.name}}</a></h1>
+                     <div class="mobile_img"><img src="{{wat.img.url}}"></div>
+                     <div class="cart_main">
+                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
+                        <h4 class="samsung_text">Samsung</h4>
+                        <h6 class="rate_text"><a href="#">$500</a></h6>
+                        <h6 class="rate_text_1">$1000</h6>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <!-- catagary section end -->
+      <!-- computers section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="computers_taital">Computers & Laptop</h1>
+         </div>
+      </div>
+      <div class="computers_section_2">
+         <div class="container-fluid">
+            <div class="computer_main">
+               <div class="row">
+                  {% for kom in komputer %}
+                  <div class="col-md-4">
+                     <div class="computer_img"><img src="{{kom.image.url}}"></div>
+                    <h1> <a href="{{kom.get_absolute_url}}">{{kom.name}}</a></h1>
+                     <div class="computer_text_main">
+                        <h4 class="dell_text">{{kom.bio}}</h4>
+                        <h6 class="price_text"><a href="#">$500</a></h6>
+                        <h6 class="price_text_1"><a href="#">$1000</a></h6>
+                     </div>
+                     <div class="cart_bt_1"><a href="#">Add To Cart</a></div>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- computers section end -->
+      <!-- mans clothes section start -->
+      <div class="mans_section layout_padding">
+         <div class="container">
+            <h1 class="computers_taital">Erkaklar koylaklari</h1>
+         </div>
+      </div>
+      <div class="mans_section_2">
+         <div class="container-fluid">
+            <div class="mans_main">
+                {% for koy in koylak %}
+               <div class="row">
+                  <div class="col-md-6">
+                    <h1><a href="{{koy.get_absolute_url}}">{{koy.name}}</a></h1>
+                     <p class="lorem_text">{{koy.bio}}</p>
+                     <div class="read_bt"><a href="#">Buy Now</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="image_3"><img src="{{koy.img.url}}"></div>
+                  </div>
+               </div>
+                {% endfor %}
+            </div>
+         </div>
+      </div>
+      <!-- mans clothes section end -->
+      <!-- womans clothes section start -->
+      <div class="computers_section layout_padding">
+         <div class="container">
+            <h1 class="womans_taital">woman’s clothes</h1>
+            <div class="womans_section_2">
+                {% for woman in womanfor %}
+               <div class="row">
+                  <div class="col-md-6">
+                     <h1><a href="{{woman.get_absolute_url}}">{{woman.name}}</a></h1>
+                     <div class="read_bt"><a href="#">Buy Now</a></div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="image_4"><img src="{{woman.image.url}}"></div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <!-- womans clothes section end -->
+{% endblock content %}
